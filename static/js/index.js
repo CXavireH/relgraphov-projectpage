@@ -2,7 +2,7 @@
 (function () {
   var dd = document.getElementById('more-research');
   if (!dd) return;
-  var toggle = dd.querySelector('.dropdown-toggle');
+  var toggle = dd.querySelector('.more-toggle');
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();
     dd.classList.toggle('open');

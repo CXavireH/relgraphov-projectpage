@@ -24,16 +24,26 @@
 </head>
 <body>
 
+<!-- ===================== TOP NAV ===================== -->
+<nav class="top-nav">
+  <div class="container is-max-desktop">
+    <a class="more-research" href="https://zju3dv.github.io/cg-slam/" target="_blank">
+      <span class="icon"><i class="fas fa-layer-group"></i></span>
+      <span>More Research</span>
+    </a>
+  </div>
+</nav>
+
 <!-- ===================== HEADER ===================== -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <p class="conf-badge">ECCV 2026</p>
           <h1 class="title is-2 publication-title">
             Beyond Isolated Objects: Relationship-aware Open-Vocabulary 3D Scene Understanding via 3D Scene Graph Analysis
           </h1>
+          <p class="conf-badge">ECCV 2026</p>
 
           <!-- Authors. TODO: replace each href="#" with the author's homepage; remove the <a> wrapper if none. -->
           <div class="is-size-5 publication-authors">
@@ -41,7 +51,7 @@
               <a class="orcid" href="https://orcid.org/0009-0004-7451-1871" target="_blank"><i class="ai ai-orcid"></i></a></span>
             <span class="author-block"><a href="#">Jiarui Hu</a><sup>1,&#42;</sup>
               <a class="orcid" href="https://orcid.org/0009-0006-9563-8956" target="_blank"><i class="ai ai-orcid"></i></a></span>
-            <span class="author-block"><a href="#">Yuanbo Yang</a><sup>3</sup>
+            <span class="author-block"><a href="#">Yuanbo Yang</a><sup>2</sup>
               <a class="orcid" href="https://orcid.org/0009-0006-3442-1024" target="_blank"><i class="ai ai-orcid"></i></a></span>
             <span class="author-block"><a href="#">Xiyu Zhang</a><sup>1</sup>
               <a class="orcid" href="https://orcid.org/0009-0001-6001-133X" target="_blank"><i class="ai ai-orcid"></i></a></span>
@@ -57,8 +67,7 @@
 
           <div class="is-size-6 publication-affiliations">
             <span class="affil-block"><sup>1</sup>State Key Lab of CAD&amp;CG, Zhejiang University</span>
-            <span class="affil-block"><sup>2</sup>School of Mechanical Engineering, Zhejiang University</span>
-            <span class="affil-block"><sup>3</sup>Zhejiang University</span>
+            <span class="affil-block"><sup>2</sup>Zhejiang University</span>
           </div>
           <div class="is-size-7 publication-notes">
             <span><sup>&#42;</sup>Equal contribution.</span>
@@ -100,11 +109,14 @@
     <figure class="image">
       <img src="static/images/teaser.png" alt="RelGraphOV teaser">
     </figure>
-    <p class="caption">
-      <b>RelGraphOV</b> encodes a scene into a relationship-aware 3D scene graph and uses an
-      environment-context-aware GAT to refine open-vocabulary semantics, resolving ambiguities
-      that appearance-only methods miss (e.g., <i>curtain</i> vs. <i>shower curtain</i>).
-    </p>
+    <div class="tldr">
+      <span class="tldr-tag">TL;DR</span>
+      RelGraphOV turns a scene into a <b>relationship-aware 3D scene graph</b> and refines
+      open-vocabulary features with a <b>dual-stream graph network</b>, so the surrounding
+      context&mdash;not appearance alone&mdash;decides each object's label (e.g.,
+      <i>curtain</i> vs. <i>shower curtain</i>). It achieves state-of-the-art open-vocabulary 3D
+      segmentation on ScanNet, ScanNet200, ScanNet++, and Replica.
+    </div>
   </div>
 </section>
 
@@ -114,7 +126,7 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-left">
           <p>
             Open-vocabulary 3D scene understanding aims to segment 3D scenes beyond predefined
             categories by transferring semantic knowledge from vision-language models. Existing
@@ -134,7 +146,7 @@
             strong performance and generalization ability.
           </p>
         </div>
-        <p class="has-text-centered keywords">
+        <p class="keywords has-text-left">
           <b>Keywords:</b> 3D Semantic Segmentation &middot; Scene Graph &middot; Open-Vocabulary
         </p>
       </div>
@@ -164,19 +176,31 @@
     </figure>
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <p>
-            Given posed RGB-D observations, RelGraphOV (1) builds a <b>relationship-aware 3D scene
-            graph</b> by abstracting objects into nodes and reasoning about their relations with a
-            vision-language model, pruning geometrically implausible edges; (2) generates
-            <b>multi-view node annotations</b> through a VLM data engine with cross-view consistency
-            adjudication; (3) refines node features with an <b>Adaptive Gated Dual-Stream Contextual
-            GAT</b> that decouples dense geometric and CLIP semantic streams and fuses them through a
-            learnable gate during edge-guided message passing; and (4) trains with a
-            <b>hierarchical contrastive</b> objective plus dual-alignment losses to mitigate semantic
-            drift and catastrophic forgetting.
-          </p>
-        </div>
+        <p class="method-intro">
+          Given posed RGB-D observations, RelGraphOV refines open-vocabulary 3D semantics in four stages:
+        </p>
+        <ol class="method-steps">
+          <li>
+            <span class="step-name">Relationship-aware Scene Graph</span>
+            Abstract objects into graph nodes and reason about their relations with a vision-language
+            model, pruning geometrically implausible edges.
+          </li>
+          <li>
+            <span class="step-name">Multi-view Node Annotation</span>
+            A VLM data engine generates rich node descriptions with cross-view consistency
+            adjudication, providing supervision without manual labels.
+          </li>
+          <li>
+            <span class="step-name">Adaptive Gated Dual-Stream GAT</span>
+            Decouple dense geometric and CLIP semantic streams and fuse them through a learnable gate
+            during edge-guided message passing, avoiding feature interference.
+          </li>
+          <li>
+            <span class="step-name">Hierarchical Contrastive Training</span>
+            A hierarchical contrastive objective with dual-alignment losses mitigates semantic drift
+            and catastrophic forgetting.
+          </li>
+        </ol>
       </div>
     </div>
   </div>

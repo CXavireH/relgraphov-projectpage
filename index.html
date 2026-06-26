@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RelGraphOV: Relationship-aware Open-Vocabulary 3D Scene Understanding</title>
+  <meta name="description" content="RelGraphOV (ECCV 2026): relationship-aware open-vocabulary 3D scene understanding via 3D scene graph analysis.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RelGraphOV: Relationship-aware Open-Vocabulary 3D Scene Understanding">
+  <meta property="og:description" content="ECCV 2026. Beyond isolated objects: relationship-aware open-vocabulary 3D scene understanding via 3D scene graph analysis.">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:type" content="website">
+
+  <!-- Frameworks via CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <p class="conf-badge">ECCV 2026</p>
+          <h1 class="title is-2 publication-title">
+            Beyond Isolated Objects: Relationship-aware Open-Vocabulary 3D Scene Understanding via 3D Scene Graph Analysis
+          </h1>
+
+          <!-- Authors. TODO: replace each href="#" with the author's homepage; remove the <a> wrapper if none. -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="#">Xianhao Chen</a><sup>1,&#42;</sup>
+              <a class="orcid" href="https://orcid.org/0009-0004-7451-1871" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Jiarui Hu</a><sup>1,&#42;</sup>
+              <a class="orcid" href="https://orcid.org/0009-0006-9563-8956" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Yuanbo Yang</a><sup>3</sup>
+              <a class="orcid" href="https://orcid.org/0009-0006-3442-1024" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Xiyu Zhang</a><sup>1</sup>
+              <a class="orcid" href="https://orcid.org/0009-0001-6001-133X" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Tengyue Wang</a><sup>2</sup>
+              <a class="orcid" href="https://orcid.org/0009-0007-9395-0417" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Hujun Bao</a><sup>1</sup>
+              <a class="orcid" href="https://orcid.org/0000-0002-2662-0334" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Guofeng Zhang</a><sup>1</sup>
+              <a class="orcid" href="https://orcid.org/0000-0001-5661-8430" target="_blank"><i class="ai ai-orcid"></i></a></span>
+            <span class="author-block"><a href="#">Zhaopeng Cui</a><sup>1,&dagger;</sup>
+              <a class="orcid" href="https://orcid.org/0000-0002-7130-439X" target="_blank"><i class="ai ai-orcid"></i></a></span>
+          </div>
+
+          <div class="is-size-6 publication-affiliations">
+            <span class="affil-block"><sup>1</sup>State Key Lab of CAD&amp;CG, Zhejiang University</span>
+            <span class="affil-block"><sup>2</sup>School of Mechanical Engineering, Zhejiang University</span>
+            <span class="affil-block"><sup>3</sup>Zhejiang University</span>
+          </div>
+          <div class="is-size-7 publication-notes">
+            <span><sup>&#42;</sup>Equal contribution.</span>
+            <span><sup>&dagger;</sup>Corresponding author.</span>
+          </div>
+
+          <!-- Resource buttons. TODO: fill arXiv and Code URLs. -->
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="static/pdfs/relgraphov.pdf" class="button is-dark is-rounded" target="_blank">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#" class="button is-dark is-rounded" target="_blank" title="TODO: add arXiv URL">
+                <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#" class="button is-dark is-rounded" target="_blank" title="TODO: add code repo URL">
+                <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#video" class="button is-dark is-rounded">
+                <span class="icon"><i class="fas fa-video"></i></span><span>Video</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEASER ===================== -->
+<section class="section teaser-section">
+  <div class="container is-max-desktop">
+    <figure class="image">
+      <img src="static/images/teaser.png" alt="RelGraphOV teaser">
+    </figure>
+    <p class="caption">
+      <b>RelGraphOV</b> encodes a scene into a relationship-aware 3D scene graph and uses an
+      environment-context-aware GAT to refine open-vocabulary semantics, resolving ambiguities
+      that appearance-only methods miss (e.g., <i>curtain</i> vs. <i>shower curtain</i>).
+    </p>
+  </div>
+</section>
+
+<!-- ===================== ABSTRACT ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Open-vocabulary 3D scene understanding aims to segment 3D scenes beyond predefined
+            categories by transferring semantic knowledge from vision-language models. Existing
+            methods have advanced this task by lifting language-aligned 2D features into 3D, yet
+            they often rely on context-independent semantic representations, leaving object
+            relationships underexplored for contextual refinement. We propose
+            <b>RelGraphOV</b>, a relationship-aware framework that uses 3D scene graphs to enhance
+            open-vocabulary 3D understanding. Our method constructs relational scene graphs from
+            multi-view observations by leveraging vision-language reasoning to infer object
+            relationships and prune geometrically implausible connections, without manual
+            relationship annotations. To aggregate relational context while avoiding feature
+            interference, we introduce an <b>Adaptive Gated Dual-Stream Contextual GAT</b> that
+            separates dense geometric features and semantic CLIP embeddings, performs edge-guided
+            message passing, and adaptively fuses complementary semantics. A hierarchical
+            contrastive objective further promotes instance-level consistency and category-level
+            discrimination. Experiments on ScanNet, ScanNet200, ScanNet++, and Replica demonstrate
+            strong performance and generalization ability.
+          </p>
+        </div>
+        <p class="has-text-centered keywords">
+          <b>Keywords:</b> 3D Semantic Segmentation &middot; Scene Graph &middot; Open-Vocabulary
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VIDEO ===================== -->
+<section class="section" id="video">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Video</h2>
+    <div class="video-wrap">
+      <video controls preload="metadata" poster="static/images/teaser.png">
+        <source src="static/videos/relgraphov.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== METHOD ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <figure class="image">
+      <img src="static/images/pipeline.png" alt="RelGraphOV pipeline">
+    </figure>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Given posed RGB-D observations, RelGraphOV (1) builds a <b>relationship-aware 3D scene
+            graph</b> by abstracting objects into nodes and reasoning about their relations with a
+            vision-language model, pruning geometrically implausible edges; (2) generates
+            <b>multi-view node annotations</b> through a VLM data engine with cross-view consistency
+            adjudication; (3) refines node features with an <b>Adaptive Gated Dual-Stream Contextual
+            GAT</b> that decouples dense geometric and CLIP semantic streams and fuses them through a
+            learnable gate during edge-guided message passing; and (4) trains with a
+            <b>hierarchical contrastive</b> objective plus dual-alignment losses to mitigate semantic
+            drift and catastrophic forgetting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTS (carousel) ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <div class="carousel" id="results-carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="static/images/results_compare.png" alt="Qualitative comparison on ScanNetV2">
+          <p class="caption">Open-vocabulary segmentation on ScanNetV2, including the
+            <i>curtain</i> vs. <i>shower curtain</i> case from the paper.</p>
+        </div>
+        <div class="carousel-slide">
+          <img src="static/images/results_scannet200.png" alt="Qualitative comparison on ScanNet200">
+          <p class="caption">ScanNet200: RelGraphOV recovers fine-grained and long-tail
+            categories that baselines misclassify or merge.</p>
+        </div>
+        <div class="carousel-slide">
+          <img src="static/images/query1.png" alt="Open-vocabulary query results in a workspace">
+          <p class="caption">Open-vocabulary queries in a cluttered workspace
+            (e.g., &ldquo;wireless computer mouse&rdquo;, &ldquo;keyboard for programming&rdquo;).</p>
+        </div>
+        <div class="carousel-slide">
+          <img src="static/images/query2.png" alt="Open-vocabulary query results in a bathroom">
+          <p class="caption">Spatial and material reasoning in a bathroom scene
+            (e.g., &ldquo;fabric shower curtain&rdquo;, &ldquo;towel hanging on the towel rack&rdquo;).</p>
+        </div>
+      </div>
+      <button class="carousel-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      <div class="carousel-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BIBTEX ===================== -->
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <div class="bibtex-wrap">
+      <button class="copy-btn" id="copy-bibtex" title="Copy to clipboard"><i class="fas fa-copy"></i> Copy</button>
+      <pre id="bibtex-content">@inproceedings{chen2026relgraphov,
+  title     = {Beyond Isolated Objects: Relationship-aware Open-Vocabulary
+               3D Scene Understanding via 3D Scene Graph Analysis},
+  author    = {Chen, Xianhao and Hu, Jiarui and Yang, Yuanbo and Zhang, Xiyu and
+               Wang, Tengyue and Bao, Hujun and Zhang, Guofeng and Cui, Zhaopeng},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container has-text-centered">
+    <p class="is-size-7">
+      This work was partially supported by the National Natural Science Foundation of China (NSFC)
+      under Grants 62572425 and 624B2132.
+    </p>
+    <p class="is-size-7">
+      Website template adapted from the
+      <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+      Content licensed under
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+    </p>
+  </div>
+</footer>
+
+<script src="static/js/index.js"></script>
+</body>
+</html>

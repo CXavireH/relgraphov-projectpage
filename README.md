@@ -33,8 +33,8 @@ Search the repo for `href="#"` and `TODO`:
 
 - **arXiv** button → arXiv URL (`index.html`, resource links).
 - **Code** button → GitHub code repo URL (`index.html`, resource links).
-- **Paper** button → currently `static/pdfs/relgraphov.pdf` (a stand-in copy).
-  Replace that file with the final **camera-ready PDF**, or point the button to the
+- **Paper** button → currently a placeholder (`href="#"`). Point it to the final
+  **camera-ready PDF** (drop it under `static/pdfs/` and link it) or the
   Springer/arXiv link.
 - **Author homepages** → each author name is `<a href="#">`; replace with the
   author's homepage, or remove the `<a>` wrapper for authors without one.
@@ -43,7 +43,7 @@ Search the repo for `href="#"` and `TODO`:
 
 - `static/images/*.png` — figures converted from the paper PDFs (`pdftoppm`, max 1600 px).
 - `static/videos/relgraphov.mp4` — 30 MB supplementary video (under GitHub's 100 MB limit).
-- `static/pdfs/relgraphov.pdf` — paper PDF (replace with camera-ready).
+- `static/pdfs/` — place the camera-ready PDF here and link it from the Paper button.
 
 To regenerate an image from a PDF figure:
 

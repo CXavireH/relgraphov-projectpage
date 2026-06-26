@@ -1,3 +1,18 @@
+// ---------- More Research dropdown ----------
+(function () {
+  var dd = document.getElementById('more-research');
+  if (!dd) return;
+  var toggle = dd.querySelector('.dropdown-toggle');
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    dd.classList.toggle('open');
+  });
+  document.addEventListener('click', function () { dd.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') dd.classList.remove('open');
+  });
+})();
+
 // ---------- Qualitative results carousel (vanilla, no deps) ----------
 (function () {
   var carousel = document.getElementById('results-carousel');

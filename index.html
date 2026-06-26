@@ -26,16 +26,29 @@
 
 <!-- ===================== TOP NAV ===================== -->
 <nav class="top-nav">
-  <div class="container is-max-desktop">
-    <a class="more-research" href="https://zju3dv.github.io/cg-slam/" target="_blank">
-      <span class="icon"><i class="fas fa-layer-group"></i></span>
-      <span>More Research</span>
-    </a>
+  <div class="container is-max-desktop nav-inner">
+    <a class="nav-brand" href="#top">RelGraphOV</a>
+    <div class="nav-right">
+      <a class="nav-link" href="#video">Video</a>
+      <a class="nav-link" href="#bibtex">BibTeX</a>
+      <!-- More Research dropdown. TODO: replace each href="#" with the project page URL. -->
+      <div class="nav-dropdown" id="more-research">
+        <button class="nav-link dropdown-toggle" type="button">More Research <i class="fas fa-caret-down"></i></button>
+        <div class="dropdown-menu">
+          <a href="https://zju3dv.github.io/cg-slam/" target="_blank"><span class="proj">CG-SLAM</span><span class="venue">ECCV 2024</span></a>
+          <a href="#" target="_blank"><span class="proj">GURecon</span><span class="venue">AAAI 2025</span></a>
+          <a href="#" target="_blank"><span class="proj">InstaScene</span><span class="venue">ICCV 2025</span></a>
+          <a href="#" target="_blank"><span class="proj">DiffWind</span><span class="venue">ICLR 2026</span></a>
+          <a href="#" target="_blank"><span class="proj">PhysSkin</span><span class="venue">CVPR 2026</span></a>
+          <a href="#" target="_blank"><span class="proj">GaussianZoom</span><span class="venue">CVPR 2026</span></a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
 <!-- ===================== HEADER ===================== -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -47,9 +60,9 @@
 
           <!-- Authors. TODO: replace each href="#" with the author's homepage; remove the <a> wrapper if none. -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="#">Xianhao Chen</a><sup>1,&#42;</sup>
+            <span class="author-block"><a href="#">Xianhao Chen</a><sup>1&#42;</sup>
               <a class="orcid" href="https://orcid.org/0009-0004-7451-1871" target="_blank"><i class="ai ai-orcid"></i></a></span>
-            <span class="author-block"><a href="#">Jiarui Hu</a><sup>1,&#42;</sup>
+            <span class="author-block"><a href="#">Jiarui Hu</a><sup>1&#42;</sup>
               <a class="orcid" href="https://orcid.org/0009-0006-9563-8956" target="_blank"><i class="ai ai-orcid"></i></a></span>
             <span class="author-block"><a href="#">Yuanbo Yang</a><sup>2</sup>
               <a class="orcid" href="https://orcid.org/0009-0006-3442-1024" target="_blank"><i class="ai ai-orcid"></i></a></span>
@@ -61,7 +74,7 @@
               <a class="orcid" href="https://orcid.org/0000-0002-2662-0334" target="_blank"><i class="ai ai-orcid"></i></a></span>
             <span class="author-block"><a href="#">Guofeng Zhang</a><sup>1</sup>
               <a class="orcid" href="https://orcid.org/0000-0001-5661-8430" target="_blank"><i class="ai ai-orcid"></i></a></span>
-            <span class="author-block"><a href="#">Zhaopeng Cui</a><sup>1,&dagger;</sup>
+            <span class="author-block"><a href="#">Zhaopeng Cui</a><sup>1&dagger;</sup>
               <a class="orcid" href="https://orcid.org/0000-0002-7130-439X" target="_blank"><i class="ai ai-orcid"></i></a></span>
           </div>
 
@@ -126,7 +139,7 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Abstract</h2>
-        <div class="content has-text-left">
+        <div class="content has-text-justified">
           <p>
             Open-vocabulary 3D scene understanding aims to segment 3D scenes beyond predefined
             categories by transferring semantic knowledge from vision-language models. Existing
@@ -155,7 +168,7 @@
 </section>
 
 <!-- ===================== VIDEO ===================== -->
-<section class="section" id="video">
+<section class="section alt" id="video">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Video</h2>
     <div class="video-wrap">
@@ -241,7 +254,7 @@
 </section>
 
 <!-- ===================== BIBTEX ===================== -->
-<section class="section" id="bibtex">
+<section class="section alt" id="bibtex">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
     <div class="bibtex-wrap">

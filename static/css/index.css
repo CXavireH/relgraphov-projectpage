@@ -1,12 +1,15 @@
 :root {
-  --ink: #1f2433;
-  --muted: #5b6172;
-  --accent: #2b6cb0;
-  --accent-soft: #ebf3fb;
-  --line: #e7e9ef;
+  --ink: #1b2028;
+  --muted: #646b7a;
+  --accent: #b42c3a;
+  --accent-dark: #8f2230;
+  --accent-soft: #fbedef;
+  --bg-alt: #faf8f7;
+  --line: #ece8e7;
 }
 
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 64px; }
 
 body {
   font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -17,47 +20,106 @@ body {
 .title, .publication-title { font-family: 'Newsreader', Georgia, serif; }
 
 /* ---------- Header ---------- */
-.hero { padding-top: 2.5rem; }
+.hero {
+  padding-top: 2.8rem;
+  padding-bottom: 1rem;
+  background: radial-gradient(1100px 360px at 50% -130px, var(--accent-soft), #fff 72%);
+}
 
 .conf-badge {
   display: inline-block;
-  font-size: .8rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: .12em;
-  color: var(--accent);
-  background: var(--accent-soft);
+  letter-spacing: .16em;
+  color: #fff;
+  background: var(--accent);
   border-radius: 999px;
-  padding: .25rem .9rem;
-  margin: .2rem 0 1.5rem;
+  padding: .42rem 1.4rem;
+  margin: .4rem 0 1.6rem;
+  box-shadow: 0 4px 14px rgba(180, 44, 58, .28);
 }
 
 /* ---------- Top nav ---------- */
 .top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .9);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid var(--line);
-  background: #fff;
 }
-.top-nav .container {
+.nav-inner {
   display: flex;
-  justify-content: flex-end;
-  padding: .55rem 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1.2rem;
 }
-.more-research {
+.nav-brand {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: var(--ink);
+}
+.nav-brand:hover { color: var(--accent); }
+.nav-right { display: flex; align-items: center; gap: .25rem; }
+.nav-link {
   display: inline-flex;
   align-items: center;
-  gap: .45rem;
-  font-size: .85rem;
+  gap: .35rem;
+  font-family: inherit;
+  font-size: .9rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .42rem .8rem;
+  border-radius: 8px;
+  transition: color .15s ease, background .15s ease;
+}
+.nav-link:hover { color: var(--accent); background: var(--accent-soft); }
+
+.nav-dropdown { position: relative; }
+.nav-dropdown .dropdown-toggle { color: var(--accent); }
+.nav-dropdown .dropdown-toggle .fa-caret-down { transition: transform .18s ease; }
+.nav-dropdown:hover .dropdown-toggle .fa-caret-down,
+.nav-dropdown.open .dropdown-toggle .fa-caret-down { transform: rotate(180deg); }
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .45rem);
+  min-width: 248px;
+  background: #fff;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: .3rem .9rem;
-  transition: all .15s ease;
+  border-radius: 14px;
+  box-shadow: 0 16px 44px rgba(20, 20, 30, .16);
+  padding: .4rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s;
 }
-.more-research:hover {
-  color: #fff;
-  background: var(--accent);
-  border-color: var(--accent);
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
+.dropdown-menu a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: .55rem .85rem;
+  border-radius: 9px;
+  color: var(--ink);
+  transition: background .12s ease;
+}
+.dropdown-menu a:hover { background: var(--accent-soft); }
+.dropdown-menu .proj { font-weight: 600; }
+.dropdown-menu .venue { font-size: .76rem; color: var(--muted); white-space: nowrap; }
 
 /* ---------- TL;DR ---------- */
 .tldr {
@@ -174,7 +236,17 @@ body {
 .section { padding-top: 2.6rem; padding-bottom: 2.6rem; }
 .teaser-section { padding-top: 1rem; padding-bottom: 1.5rem; }
 
-.title.is-3 { margin-bottom: 1.4rem; }
+.title.is-3 { margin-bottom: 1.6rem; }
+.section .title.is-3.has-text-centered::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: .75rem auto 0;
+  background: var(--accent);
+  border-radius: 3px;
+}
+.section.alt { background: var(--bg-alt); }
 
 .caption {
   color: var(--muted);

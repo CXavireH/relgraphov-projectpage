@@ -235,19 +235,19 @@
                 <tr><td class="lcol">PLA</td><td>17.7</td><td>33.5</td><td>1.8</td><td>3.1</td></tr>
                 <tr><td class="lcol">RegionPLC</td><td>43.8</td><td>65.6</td><td>6.5</td><td>15.9</td></tr>
                 <tr><td class="lcol">OpenMask3D</td><td>34.0</td><td>–</td><td>10.5</td><td>–</td></tr>
-                <tr><td class="lcol">MaskClustering</td><td>34.4</td><td>59.6</td><td>11.8</td><td>24.7</td></tr>
+                <tr><td class="lcol">MaskClustering</td><td>34.4</td><td>59.6</td><td class="r3">11.8</td><td class="r3">24.7</td></tr>
                 <tr><td class="lcol">OpenScene-2D</td><td>50.0</td><td>62.7</td><td>8.8</td><td>13.5</td></tr>
                 <tr><td class="lcol">OpenScene-3D</td><td>52.9</td><td>63.2</td><td>6.8</td><td>8.7</td></tr>
                 <tr><td class="lcol">OpenScene-2D3D</td><td>54.2</td><td>66.6</td><td>7.9</td><td>11.4</td></tr>
                 <tr><td class="lcol">DMA</td><td>50.5</td><td>63.7</td><td>8.7</td><td>11.3</td></tr>
-                <tr><td class="lcol">Mosaic3D</td><td>48.9</td><td><b>73.6</b></td><td>12.4</td><td>25.1</td></tr>
-                <tr><td class="lcol">CUA-O3D</td><td>55.3</td><td>65.6</td><td>6.4</td><td>8.8</td></tr>
-                <tr><td class="lcol">OV3D</td><td>57.3</td><td>72.9</td><td>8.7</td><td>–</td></tr>
-                <tr class="ours"><td class="lcol">RelGraphOV (Ours)</td><td><b>58.4</b></td><td>73.4</td><td><b>14.5</b></td><td><b>26.1</b></td></tr>
+                <tr><td class="lcol">Mosaic3D</td><td>48.9</td><td class="r1">73.6</td><td class="r2">12.4</td><td class="r2">25.1</td></tr>
+                <tr><td class="lcol">CUA-O3D</td><td class="r3">55.3</td><td>65.6</td><td>6.4</td><td>8.8</td></tr>
+                <tr><td class="lcol">OV3D</td><td class="r2">57.3</td><td class="r3">72.9</td><td>8.7</td><td>–</td></tr>
+                <tr><td class="lcol"><span class="oursname">RelGraphOV (Ours)</span></td><td class="r1">58.4</td><td class="r2">73.4</td><td class="r1">14.5</td><td class="r1">26.1</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="caption">Open-vocabulary 3D semantic segmentation on ScanNetV2 and ScanNet200 (mIoU/mAcc, %). Column-best in bold.</p>
+          <p class="caption">Open-vocabulary 3D semantic segmentation on ScanNetV2 and ScanNet200 (mIoU/mAcc, %). Per-column <span style="background:#cde9c6">1st</span> / <span style="background:#c8e8d6">2nd</span> / <span style="background:#fbeec2">3rd</span> are shaded.</p>
         </div>
 
         <!-- Slide 2: ScanNet++ -->
@@ -258,11 +258,11 @@
                 <tr><th class="lcol">Method</th><th>mIoU</th><th>mAcc</th></tr>
               </thead>
               <tbody>
-                <tr><td class="lcol">OpenScene-2D</td><td>13.30</td><td>20.00</td></tr>
+                <tr><td class="lcol">OpenScene-2D</td><td class="r2">13.30</td><td class="r2">20.00</td></tr>
                 <tr><td class="lcol">OpenScene-3D</td><td>8.88</td><td>13.59</td></tr>
-                <tr><td class="lcol">OpenScene-2D3D</td><td>11.72</td><td>15.34</td></tr>
+                <tr><td class="lcol">OpenScene-2D3D</td><td class="r3">11.72</td><td class="r3">15.34</td></tr>
                 <tr><td class="lcol">CUA-O3D</td><td>9.30</td><td>13.69</td></tr>
-                <tr class="ours"><td class="lcol">RelGraphOV (Ours)</td><td><b>20.90</b></td><td><b>33.20</b></td></tr>
+                <tr><td class="lcol"><span class="oursname">RelGraphOV (Ours)</span></td><td class="r1">20.90</td><td class="r1">33.20</td></tr>
               </tbody>
             </table>
           </div>
@@ -286,8 +286,8 @@
               <tbody>
                 <tr><td class="lcol">OpenScene-2D</td><td>12.9</td><td>19.4</td><td>31.8</td><td>43.1</td><td>6.1</td><td>13.9</td><td>1.2</td><td>1.2</td></tr>
                 <tr><td class="lcol">OpenScene-3D</td><td>10.4</td><td>17.4</td><td>26.8</td><td>38.5</td><td>4.5</td><td>13.5</td><td>0.0</td><td>0.0</td></tr>
-                <tr><td class="lcol">OpenNeRF<sup>&dagger;</sup></td><td>20.4</td><td>31.7</td><td>35.4</td><td>46.2</td><td>20.1</td><td>31.3</td><td>5.8</td><td><b>17.6</b></td></tr>
-                <tr class="ours"><td class="lcol">RelGraphOV (Ours)</td><td><b>22.7</b></td><td><b>32.7</b></td><td><b>38.4</b></td><td><b>55.2</b></td><td><b>22.4</b></td><td><b>33.7</b></td><td><b>7.3</b></td><td>9.2</td></tr>
+                <tr><td class="lcol">OpenNeRF<sup>&dagger;</sup></td><td class="r2">20.4</td><td class="r2">31.7</td><td class="r2">35.4</td><td class="r2">46.2</td><td class="r2">20.1</td><td class="r2">31.3</td><td class="r2">5.8</td><td class="r1">17.6</td></tr>
+                <tr><td class="lcol"><span class="oursname">RelGraphOV (Ours)</span></td><td class="r1">22.7</td><td class="r1">32.7</td><td class="r1">38.4</td><td class="r1">55.2</td><td class="r1">22.4</td><td class="r1">33.7</td><td class="r1">7.3</td><td class="r2">9.2</td></tr>
               </tbody>
             </table>
           </div>
